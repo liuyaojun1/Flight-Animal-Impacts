@@ -37,7 +37,7 @@ The interface is organized into **four coordinated panels**:
 ---
 
 
-### Installation
+### Running the APP
 Download the data from the `data` folder:
       ```
       database.csv
