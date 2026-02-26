@@ -1,4 +1,4 @@
-# Flight–Animal Impacts Explorer
+# Flight–Animal Impacts Dashboard
 *FAA Aircraft Wildlife Strikes Dashboard (1990–2015)*
 
 ## Project Overview
