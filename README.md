@@ -32,37 +32,23 @@ The interface is organized into **four coordinated panels**:
   - Displays a comparison plot (e.g., grouped/stacked bars or heatmap)
 
 ### App Sketch (Milestone 1)
-![App sketch](img/app_sketch.png)
-
----
-
-## Milestone 1 (Design & Planning)
-### Required Files
-1. **Submission Instruction:** Since canvas-submission.md is no longer required, instead, we uploaded our dataset [here](Milestone%201/database.csv).
-2. **Proposal:** [proposal.md](Milestone%201/proposal.md)
-3. **Description of your app & sketch:** [README.md](README.md)
-4. **Team work contract and collaborative documentation**:
-   - [Team work contract](team-contract.md)
-   - [Code of Conduct](CODE_OF_CONDUCT.md)
-   - [Contribution guidelines](CONTRIBUTING.md)
-5. **Start developing your app:** [master-plotter.ipynb](Milestone%201/master-plotter.ipynb)
-
----
-
-## Milestone 2 (Prototype)
-### Scope (Prototype)
-Milestone 2 focuses on delivering a **functional prototype** that demonstrates the core workflow and interaction design:
-1. Choose an **outcome scope** (severity level)
-2. Apply filters (e.g., year range, species search, airport/state, aircraft type)
-3. Explore coordinated panels that update based on selections
-
-### What Is Planned for Future Milestones
-Future milestones will focus on usability polish, richer interactions, performance improvements, and incorporating user feedback, while completing deployment and final documentation.
-
-### Prototype Screenshot
 <img width="1536" height="1024" alt="prototype" src="https://github.com/user-attachments/assets/38893b28-ea6e-41fe-84e5-fa4435f7e956" />
 
 ---
 
-## Links
-- **GitHub Repository:** https://github.com/liuyaojun1/Flight-Animal-Impacts
+
+### Installation
+
+To install the app locally:
+      ```
+      pip install -r requirements.txt
+      ```
+
+
+To run the app locally:
+      ```
+      python src/app.py
+      ```
+
+
+The dashboard will be available at `http://127.0.0.1:8050`.
