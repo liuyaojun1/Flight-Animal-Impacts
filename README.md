@@ -49,10 +49,10 @@ To install the app locally:
       ```
 
 
-To run the app locally (make sure `database.csv` is saved in the same path as `app.py`):
+To run the app locally:
       ```
       python app.py
       ```
-
+(make sure `database.csv` is saved in the same path as `app.py`, the `app.py` is saved under the `src` folder)
 
 The dashboard will be available at `http://127.0.0.1:8050`. **(Need to wait a few seconds to a minute to show the entire dashboard!!!)**
