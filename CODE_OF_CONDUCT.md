@@ -1,7 +1,7 @@
-# Code of Conduct (DATA 551 — Group 9)
+# Code of Conduct (Flight–Animal Impacts Dashboard)
 
 ## Introduction
-In order to create a safe, positive, productive, and happy community, we adopt this Code of Conduct for the **DATA 551 Group 9** course project.
+In order to create a safe, positive, productive, and happy community, we adopt this Code of Conduct for the **Flight–Animal Impacts Dashboard** project.
 
 A code of conduct is an outward-facing document that explains social norms, acceptable behaviour, and general etiquette expected in our project spaces. This Code of Conduct applies to all project-related interactions, including (but not limited to): in-person meetings, Zoom, email, Canvas discussions, GitHub (issues, pull requests, code reviews), and any messaging platforms used by the team.
 
