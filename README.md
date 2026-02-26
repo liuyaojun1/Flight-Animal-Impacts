@@ -14,7 +14,7 @@ Wildlife strikes can cause operational disruption and, in rare cases, serious co
 - Airport/airline operations stakeholders  
 - Students learning exploratory data analysis and interactive visualization
 
-## App Design (Coordinated Panels)
+## App Design
 The interface is organized into **four coordinated panels**:
 
 - **Panel A — Species Ranking**
@@ -22,8 +22,8 @@ The interface is organized into **four coordinated panels**:
   - Selecting a species updates the remaining panels
 - **Panel B — Time Trend**
   - Shows a year-by-year trend for the selected species (1990–2015)
-- **Panel C — Geographic Summary**
-  - Summarizes where incidents occur geographically (e.g., state-level map or summary)
+- **Panel C — Density Plot**
+  - Summarizes where incidents are distributed by height and speed level.
 - **Panel D — Deeper Breakdown (“Group by”)**
   - Breaks down the filtered data by one of:
     - time of day
