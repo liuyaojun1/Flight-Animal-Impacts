@@ -66,4 +66,4 @@ Future milestones will focus on usability polish, richer interactions, performan
 
 ## Links
 - **GitHub Repository:** https://github.com/liuyaojun1/Flight-Animal-Impacts
-- **Deployed App:** *(add deployment link here if available)*
+
