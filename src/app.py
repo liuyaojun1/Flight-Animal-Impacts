@@ -16,7 +16,7 @@ warnings.filterwarnings("ignore")
 # 2. DATA LOADING & PRE-PROCESSING 
 # =============================================================================
 try:
-    impacts = pd.read_csv("data/database.csv", low_memory=False)
+    impacts = pd.read_csv("../data/database.csv", low_memory=False)
 except FileNotFoundError:
     impacts = pd.DataFrame()
 
