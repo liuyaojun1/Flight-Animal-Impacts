@@ -201,7 +201,27 @@ app.layout = dbc.Container([
     prevent_initial_call=True
 )
 def reset_filters(n_clicks):
+    """
+    Resets the dashboard filters to their default values.
+
+    This function is triggered by clicking the "Reset Filters & Charts" button.
+    It returns the default string values for the three main dropdown menus, 
+    which subsequently triggers the main dashboard update callback to clear 
+    any active Altair brushes or selections.
+
+    Parameters
+    ----------
+    n_clicks : int
+        The number of times the reset button has been clicked.
+
+    Returns
+    -------
+    tuple of str
+        A tuple containing the default values for the dropdowns:
+        ('all', 'Log_Speed', 'Flight Phase').
+    """
     return 'all', 'Log_Speed', 'Flight Phase'
+
 
 @app.callback(
     [Output('main-plot', 'srcDoc'),
@@ -215,6 +235,33 @@ def reset_filters(n_clicks):
      Input('breakdown-filter', 'value')]
 )
 def update_dashboard(severity, panel_c_col, panel_d_col):
+    """
+    Filters the FAA Wildlife Strike dataset and generates the interactive 
+    Altair visualizations and dynamic KPI texts.
+
+    Parameters
+    ----------
+    severity : str
+        The severity level to filter the dataset by. 
+        Valid options are 'all', 'damage', 'injury', or 'death'.
+    panel_c_col : str
+        The continuous metric to display in the logarithmic distribution 
+        histogram. Valid options are 'Log_Speed' or 'Log_Height'.
+    panel_d_col : str
+        The categorical feature to group by in the breakdown bar chart. 
+        Valid options are 'Flight Phase', 'Aircraft Type', or 'Month'.
+
+    Returns
+    -------
+    tuple
+        A 6-element tuple containing:
+        - final_chart.to_html() (str): The compiled 2x3 Altair dashboard as an HTML string.
+        - stat_incidents (str): Formatted total number of incidents.
+        - stat_damage (str): Formatted total number of incidents with damage.
+        - stat_injuries (str): Formatted total number of injuries.
+        - stat_fatalities (str): Formatted total number of fatalities.
+        - insight_text (str): A dynamically generated string summarizing the top species and max speed.
+    """
     df = impacts.copy()
     
     if severity == 'damage':
