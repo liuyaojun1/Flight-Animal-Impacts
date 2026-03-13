@@ -354,3 +354,4 @@ def update_dashboard(severity, panel_c_col, panel_d_col):
 
 if __name__ == '__main__':
     app.run(debug=False)
+# PR preview trigger
