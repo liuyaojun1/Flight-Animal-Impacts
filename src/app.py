@@ -65,6 +65,7 @@ TOTAL_RECORDS = len(impacts)
 # =============================================================================
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.FLATLY])
 app.title = "Wildlife Strikes"
+server = app.server
 
 # Use vh (viewport height) overflow hidden to strictly prevent full-page scrolling
 app.layout = dbc.Container([
