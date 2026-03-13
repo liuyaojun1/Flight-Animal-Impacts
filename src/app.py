@@ -83,7 +83,6 @@ app.layout = dbc.Container([
             dbc.Card(
                 dbc.CardBody(
                     dbc.Row([
-                        dbc.Col([html.Small("Total Records", className="text-muted text-uppercase fw-bold"), html.H5(f"{TOTAL_RECORDS:,}", className="text-primary fw-bold mb-0")]),
                         dbc.Col([html.Small("Incidents", className="text-muted text-uppercase fw-bold"), html.H5(id='stat-incidents', className="text-primary fw-bold mb-0")]),
                         dbc.Col([html.Small("With Damage", className="text-muted text-uppercase fw-bold"), html.H5(id='stat-damage', className="text-danger fw-bold mb-0")]),
                         dbc.Col([html.Small("Injuries", className="text-muted text-uppercase fw-bold"), html.H5(id='stat-injuries', className="text-warning fw-bold mb-0")]),
