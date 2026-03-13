@@ -351,10 +351,14 @@ def update_dashboard(severity, panel_c_col, panel_d_col):
     # ---------------- ROW 2 CHARTS ----------------
     orig_col = "Speed (km/h)" if "Speed" in panel_c_col else "Height (m)"
     chart_dist = alt.Chart(df_chart).mark_bar().encode(
-        x=alt.X(f'{panel_c_col}:Q', bin=alt.Bin(maxbins=30), title=f'Log of {orig_col}'),
-        y=alt.Y('count()', title='Frequency'),
-        color=alt.value('teal'),
-        tooltip=[alt.Tooltip(f'{panel_c_col}:Q', bin=True, title='Log Range'), 'count()']
+    x=alt.X(f'{panel_c_col}:Q', bin=alt.Bin(maxbins=30), title=f'Log of {orig_col}'),
+    y=alt.Y(
+        'count()',
+        title='Frequency (log scale)',
+        scale=alt.Scale(type='log')
+    ),
+    color=alt.value('teal'),
+    tooltip=[alt.Tooltip(f'{panel_c_col}:Q', bin=True, title='Log Range'), 'count()']
     ).transform_filter(click_species).transform_filter(brush_year).properties(
         title=f'{orig_col} Distribution', width=CHART_WIDTH, height=CHART_HEIGHT
     )
