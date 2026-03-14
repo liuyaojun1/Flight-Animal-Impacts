@@ -1,22 +1,18 @@
-**Our FAA Aircraft Wildlife Strikes dashboard has improved a lot since the last milestone in many ways:**
+# Milestone 4 Reflection
 
-- We added a plot to show strike counts by state on an interactive map of the USA. Clicking a state filters other plots to only data for that state, and hovering over a state reveals the strike information for that state. This helps the user locate areas where aircraft-wildlife impacts needs to be addressed most. The map plot is linked to the bar plot below it. Hovering over any state in the bar plot highlights the same state in the map plot. This added interactivity was added based on the feedback from Milestone 3.
-- We also added a histogram that can display the distribution of strikes over either speed or height. Users can select which is displayed using a dropdown. Hovering over a bar gives the count number for that bar.
-- We added a collapsable information guide to help users interact with the dashboard.
-- A date range can now be selected on the Yearly Trend plot by simply clicking and dragging your mouse, which filters the data in the other plots. 
-- We also added more colour to the bar plots to increase visual appeal. 
-- We added a button with a label of "..." that gives options to save specific states of the dashboard in different formats. This was suggested by our Milestone 3 feedback.
-- We added a Reset Filters and Charts button to help users return the dashboard to its default state.
+**Implemented Features and Feedback Integration**
 
-**Dropped Features:**
+Our FAA Aircraft Wildlife Strikes dashboard has evolved into a highly interactive, production-ready application, heavily guided by peer and TA feedback. User testing indicated that the application was intuitive, but a recurring theme in our Milestone 3 feedback was the need for immediate geographic context. 
 
-- We originally planned to include additional granular filters (such as "Time of Day" or "Bird Size"). However, we ultimately chose not to include them to prevent UI clutter. Maintaining a strict single-page, no-scroll layout was a higher priority for usability than adding more dropdowns.
-- We used to display "Total Records" and "Incidents" in the KPI cards, which is redundant since every record is an incident.
+The most valuable insight we received was the suggestion to incorporate an interactive map. In response, we dedicated significant effort to implementing a US Choropleth map linked directly to a "Top 10 States" bar plot. Hovering over a state in the bar chart highlights it on the map, and clicking a state cross-filters the entire dashboard. Handling the heavily right-skewed speed and height data also required a mathematical approach; we implemented a `log1p` transformation and built a dynamic histogram to accurately display these distributions. To further polish the user experience, we engineered a click-and-drag date range selector on the Yearly Trend plot, a collapsible interaction guide, and a functional "Reset Filters & Charts" button. 
 
-**The dashboard is still a work in progress. These are planned features yet to be completed:**
+**Feature Prioritization and Design Choices**
 
-- Remove duplicate information. We mention that the data for 2015 does not cover the entire year in 2 places. One will be removed to avoid repetition.
-- More intuitive colours. Fatalities will be show in red, Injuries in orange, With Damage in yellow, and Incidents in blue. This way the colours will intuitively indicate the severity.
-- The speed/height histogram would be more useful as a log-log plot than a semi-log plot since most impacts occur at 0 height and relatively low speeds.
-- The "..." button gives options to View Source, View Compiled Vega, and Open in Vega Editor. These options are in progress. Currently, clicking them crashes the dashboard.
-- We will try to improve loading speed.
+To deliver a stable, professional application, we had to make strict design choices regarding our planned features. We originally intended to include additional granular dropdown filters, such as "Time of Day" and "Bird Size." However, integrating the new map and log-scale visualizations took priority. We explicitly chose to drop the extra filters to prevent UI clutter and maintain a strict, responsive, single-page layout without scrolling. Ensuring the core visualizations rendered beautifully on one screen was a higher priority for usability than adding secondary filters.
+
+**Known Edge Cases and Future Enhancements**
+
+While the core application is fully functional and performant, there are a few edge cases we have documented for future development:
+* **Native Vega Menu Limitations:** Altair generates a default action menu ("...") on charts. While saving images works, clicking "View Source" or "Open in Vega Editor" currently disrupts the dashboard environment. This is a known library limitation we plan to disable or override in future patches.
+* **Redundant UI Elements:** We are aware of minor text redundancies in the current build, such as displaying both "Total Records" and "Incidents," and repeating the 2015 partial data disclaimer.
+* **Future Optimization:** Cross-filtering the large dataset across all six plots simultaneously handles a massive amount of data; future versions would focus on backend caching to improve sluggish callback speeds during heavy interaction.
